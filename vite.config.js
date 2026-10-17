@@ -18,13 +18,13 @@ export default defineConfig({
         scope: "/Nihonggo-o-bekyo/",
         start_url: "/Nihonggo-o-bekyo/",
         icons: [
-          { src: "Nihonggo-o-bekyo-main/public/pwa-192x192.jpeg", sizes: "192x192", type: "image/jpeg" },
-          { src: "Nihonggo-o-bekyo-main/public/pwa-512x512.jpeg", sizes: "512x512", type: "image/jpeg" },
+          { src: "pwa-192x192.png", sizes: "192x192", type: "image/png" },
+          { src: "pwa-512x512.png", sizes: "512x512", type: "image/png" },
           {
-            
-            src: "Nihonggo-o-bekyo-main/public/pwa-512x512.jpeg",
+
+            src: "pwa-512x512.png",
             sizes: "512x512",
-            type: "image/jpeg",
+            type: "image/png",
             purpose: "maskable"
           }
         ]
