@@ -1,12 +1,33 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { VitePWA } from "vite-plugin-pwa";
+// import plugin lain yang sudah ada (misal react) tetap dipertahankan
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  // Relative base path: works both at a domain root (Vercel/Netlify) and
-  // in a GitHub Pages project subdirectory (username.github.io/repo-name/)
-  // without needing to hardcode the repo name here. Safe here because the
-  // app uses in-memory view state instead of URL-based routing.
-  base: "./",
+  base: "/Nihonggo-o-bekyo/",
+  plugins: [
+    // plugin lama kamu (react(), dll) taruh di sini
+    VitePWA({
+      registerType: "autoUpdate",
+      manifest: {
+        name: "Nihonggo o Bekyo",
+        short_name: "Nihonggo",
+        description: "Belajar bahasa Jepang",
+        theme_color: "#ffffff",
+        background_color: "#ffffff",
+        display: "standalone",
+        scope: "/Nihonggo-o-bekyo/",
+        start_url: "/Nihonggo-o-bekyo/",
+        icons: [
+          { src: "pwa-192x192.jpeg", sizes: "192x192", type: "image/jpeg" },
+          { src: "pwa-512x512.jpeg", sizes: "512x512", type: "image/jpeg" },
+          {
+            src: "pwa-512x512.jpeg",
+            sizes: "512x512",
+            type: "image/jpeg",
+            purpose: "maskable"
+          }
+        ]
+      }
+    })
+  ]
 });
